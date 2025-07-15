@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  child-src 'none';
+  object-src 'none';
+  ">
+  <title>회원정보</title>
+  <link rel="stylesheet" href="../styles/userInfo.css">
+</head>
+<body>
+<div class="container">
+  <div class="header-row">
+    <h3>회원정보</h3>
+  </div>
+  <table>
+    <tr>
+      <td>상호</td>
+      <td><input id="corpName" type="text"></td>
+      <td>사업자등록번호</td>
+      <td><input id="corpNum" type="text"></td>
+    </tr>
+    <tr>
+      <td>홈택스ID</td>
+      <td><input id="homTaxID" type="text"></td>
+      <td>홈택스PW</td>
+      <td><input id="homTaxPW" type="password"></td>
+    </tr>
+    <tr>
+      <td>사용자이름</td>
+      <td><input type="text"></td>
+      <td>사무실</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td><input id="mail" type="text"></td>
+      <td>휴대폰</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td>관리번호</td>
+      <td><input type="text"></td>
+      <td>관리PW</td>
+      <td><button>더블클릭</button></td>
+    </tr>
+    <tr>
+      <td>공인인증서등록</td>
+      <td><button>더블클릭</button></td>
+      <td>유효기간</td>
+      <td><span id="expire"></span></td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <div>
+      <a href="#">신규사용자 추가 등록</a>
+    </div>
+    <div class="actions-right">
+      <button>전자문서 PW</button>
+      <button id="registerRequestBtn" class="registerRequestBtn">등록요청</button>
+      <button id="editBtn" class="editBtn">수정</button>
+    </div>
+  </div>
+</div>
+<script src="../renderer/userInfoRenderer.js"></script>
+</body>
+</html>

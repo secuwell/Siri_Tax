@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  child-src 'none';
+  object-src 'none';
+  ">
+  <title>Siri Tax</title>
+  <link rel="stylesheet" href="../styles/index.css" />
+</head>
+<body>
+  <div class="user-header">
+    <div class="user-info-group">
+      <div class="user-id">
+        <span id="userIdSpan"></span>님
+      </div>
+      <button id="userinfo" class="header-btn">회원정보</button>
+      <button id="logoutbtn" class="header-btn">로그아웃</button>
+    </div>
+    <div class="expire">
+      유효기간: <span id="expireDateSpan"></span>
+    </div>
+  </div>
+  <div class="tab-bar">
+    <button class="tab-button active" data-tab="general">일반신고</button>
+    <button class="tab-button" data-tab="property">재산세</button>
+    <button class="tab-button" data-tab="documents">첨부서류제출</button>
+    <button class="tab-button" data-tab="certificates">증명/납세자료</button>
+    <button class="tab-button" data-tab="siri_erp">Siri_ERP</button>
+  </div>
+  <!-- 일반신고 -->
+  <div id="general" class="tab-content active">
+    <div class="box1"><button id="WTX_REPORT">원천세신고</button></div>
+    <div class="box2"><button id="VAT_REPORT">부가세신고</button></div>
+    <div class="box3"><button id="CORP_REPORT">법인세신고</button></div>
+    <div class="box4"><button id="GLOBAL_REPORT">소득세신고</button></div>
+    <div class="box5"><button id="TaxReturn_REPORT">지급명세서</button></div>
+    <div class="box6"><button id="TaxReturnTmp_REPORT">간이지급명세</button></div>
+    <div class="box7"><button id="WTX_HISTORY" value="14">원천세내역</button></div>
+    <div class="box8"><button id="VAT_HISTORY" value="41">부가세내역</button></div>
+    <div class="box9"><button id="CORP_HISTORY" value="31">법인세내역</button></div>
+    <div class="box10"><button id="GLOBAL_HISTORY" value="10">소득세내역</button></div>
+    <div class="box11"><button id="TaxReturn_HISTORY" value="지급">지급명세내역</button></div>
+    <div class="box12"><button id="TaxReturnTmp_HISTORY" value="간이">간이지급내역</button></div>
+  </div>
+  <!-- 재산세 -->
+  <div id="property" class="tab-content">
+    <div class="box1"><button id="CGT_REPORT">양도세신고</button></div>
+    <div class="box3"><button id="GIFT_REPORT">증여세신고</button></div>
+    <div class="box4"><button>상속세신고</button></div>
+    <div class="box2"><button id="STT_REPORT">증권거래신고</button></div>
+    <div class="box7"><button id="CGT_HISTORY" valute="22">양도세내역</button></div>
+    <div class="box9"><button id="GIFT_HISTORY" value="33">증여세내역</button></div>
+    <div class="box10"><button value="32">상속세내역</button></div>
+    <div class="box8"><button id="STT_HISTORY" value="45">증권거래내역</button></div>
+  </div>
+  <!-- 첨부서류제출 -->
+<div id="documents" class="tab-content">
+  <div class="report-input-box">
+    <div class="head-line">
+      <div id="docuResult" class="docu-result-message"></div>
+      <button id="submitReportBtn" class="report-submit-row">서류제출</button>
+    </div>
+    <div class="report-row">
+      <label for="itrfCd">세목코드</label>
+      <select id="itrfCd">
+        <option value="">-- 선택하세요 --</option>
+        <option value="10">종합소득세</option>
+        <option value="14">원천세</option>
+        <option value="22">양도소득세</option>
+        <option value="31">법인세</option>
+        <option value="32">상속세</option>
+        <option value="33">증여세</option>
+        <option value="41">부가세</option>
+        <option value="43">주세</option>  
+        <option value="45">증권거래세</option>
+        <option value="46">인지세</option>
+        <option value="47">개별소비세</option>
+        <option value="57">종합부동산세</option>
+        <option value="59">교통·에너지·환경세</option>
+        <option value="65">교육세(금융)</option>
+        <option value="66">교육세(보험)</option>
+      </select>
+      <label for="idNumber">사업자번호 또는 주민번호</label>
+      <input id="idNumber" type="text">
+    </div>
+    <div class="report-row">
+      <label for="bgnDate">시작일</label>
+      <input id="bgnDate" type="date">
+      <label for="endDate">종료일</label>
+      <input id="endDate" type="date">
+    </div>
+    <div class="report-row">
+      <label for="fileName">파일명</label>
+      <input id="fileInput" type="file" style="display: none;">
+      <input id="fileName" type="text" placeholder="선택된 파일 없음" readonly>
+      <button type="button" id="browseBtn">찾아보기</button>
+    </div>
+  </div>
+</div>
+
+  <!-- 증명/납세자료 -->
+  <div id="certificates" class="tab-content">
+    <div class="box1"><button id="boxButton51">납세증명</button></div>
+    <div class="box2"><button id="boxButton52">사업자등록증명</button></div>
+    <div class="box3"><button id="boxButton53">소득금액증명</button></div>
+    <div class="box4"><button id="boxButton54">부가세과세표준증명</button></div>
+    <div class="box5"><button id="boxButton55">표준재무제표</button></div>
+    <div class="box6"><button id="boxButton56">납부내역증명</button></div>
+    <div class="box7"><button id="boxButton57">카드매출</button></div>
+    <div class="box8"><button id="boxButton57">현금매출</button></div>
+    <div class="box9"><button id="boxButton58">대리납부</button></div>
+  </div>
+  <!-- Siri_ERP -->
+  <div id="siri_erp" class="tab-content">
+    <div></div>
+  </div>
+  <span id="resultSpan"></span>
+  <script src="../renderer/indexRenderer.js"></script>
+</body>
+</html>

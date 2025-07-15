@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  child-src 'none';
+  object-src 'none';
+  ">
+  <title></title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {  
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>날짜를 선택하세요</h2>
+
+  <label for="start">시작일</label>
+  <input type="date" id="start" />
+
+  <label for="end">종료일</label>
+  <input type="date" id="end" />
+
+  <button id="submit">다운로드</button>
+
+  <script src="../../renderer/reportRenderer.js"></script>
+</body>
+</html>

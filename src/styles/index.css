@@ -1,0 +1,310 @@
+/* === 전체 레이아웃 설정 === */
+body {
+  user-select: none;
+  max-width: 38rem;
+  background-color: #ffffff;
+  color: #333;
+  font-family: sans-serif;
+}
+
+/* 사용자 정보 헤더 전체 */
+.user-header {
+  position: absolute;
+  top: 10px;
+  left: 49.4%;
+  transform: translateX(-50%);
+  width: 625px;
+  height: 32px;
+  font-size: 12.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-id {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header-btn {
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.header-btn:hover {
+  background-color: #f2f2f2;
+  border-color: #999;
+}
+
+.expire {
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  height: 18px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+/* === 공통 버튼 스타일 === */
+[class^="box"] button {
+  all: unset;
+  width: 100px;
+  height: 50px;
+  font-size: 14px;
+  font-family: pretendard-medium;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* === 박스 공통 스타일 === */
+[class^="box"] {
+  position: absolute;
+  width: 100px;
+  background-color: #fafafa;
+  border: 0.5px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+[class^="box"]:hover {
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+}
+
+/* === 박스 위치 지정 === */
+.box1 { top: 100px; left: 25px; }
+.box2 { top: 100px; left: 130px; }
+.box3 { top: 100px; left: 235px; }
+.box4 { top: 100px; left: 340px; }
+.box5 { top: 100px; left: 445px; }
+.box6 { top: 100px; left: 550px; }
+.box7 { top: 155px; left: 25px; }
+.box8 { top: 155px; left: 130px; }
+.box9 { top: 155px; left: 235px; }
+.box10 { top: 155px; left: 340px; }
+.box11 { top: 155px; left: 445px; }
+.box12 { top: 155px; left: 550px; }
+
+/* === 결과 메시지 영역 === */
+#resultSpan {
+  position: absolute;
+  top: 215px;
+  left: 49.5%;
+  transform: translateX(-50%);
+  width: 602px;
+  padding: 10px 12px;
+  min-height: 50px;
+  text-align: center;
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+#resultSpan.loading {
+  background-color: #fff3d1;
+  color: #c9a94d;
+  border-color: #f2d79f;
+  animation: loading-blink 1s infinite alternate;
+}
+
+#resultSpan.success {
+  background-color: #d0f0d3;
+  color: #2e7d32;
+  border-color: #81c784;
+}
+
+#resultSpan.error {
+  background-color: #fbe9e7;
+  color: #c62828;
+  border-color: #ef9a9a;
+}
+
+/* === 탭바 === */
+.tab-bar {
+  position: absolute;
+  top: 40px;
+  left: 3.8%;
+  width: 625px;
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-bar .tab-button {
+  all: unset;
+  width: 100px;
+  font-size: 14px;
+  font-family: pretendard-medium, sans-serif;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab-bar .tab-button.active {
+  border-bottom: 2px solid #f2d79f; 
+  color: #c9a94d;
+}
+
+/* === 서류제출 콘텐츠 === */
+/* 서류제출 버튼 */
+#sendDocu {
+  left: 100px;
+  width: 100px;
+  height: 50px;
+}
+.tab-content {
+  display: none;
+  margin-top: 100px;
+}
+
+.tab-content.active {
+  display: block;
+}
+/* === 첨부서류제출 전용 === */
+/* 업로드 영역 전체 박스 */
+#uploadArea {
+  top : 100px;
+  bottom: 25px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+/* 업로드 버튼 */
+#uploadArea button {
+  all: unset;
+  font-size: 13px;
+  padding: 6px 12px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#uploadArea button:hover {
+  background-color: #e6e6e6;
+}
+
+/* 파일 인풋 */
+#fileInput {
+  font-family: pretendard;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+/* 첨부서류제출 전체 박스 */
+.report-input-box {
+  position: absolute;
+  top: 100px;
+  left: 25px;
+  width: 626px;
+  margin: 0 auto;
+  padding: 20px 18px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+/* 한 줄에 2개씩 */
+.report-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 17px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.report-row label {
+  width: 100px;
+  font-size: 13px;
+  color: #333;
+  text-align: left;
+}
+
+.report-row input, select {
+  flex: 1;
+  height: 30px;
+  padding: 0 8px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-width: 120px;
+}
+
+/* 단독 input 한 줄에만 왼쪽 offset 유지 */
+.report-row:last-of-type input, select {
+  flex: 1;
+  width: 100%;
+}
+.head-line {
+  top: 5px;
+  position: absolute;
+  width: 620px;
+}
+#submitReportBtn {
+  all: unset;
+  position: absolute;
+  top: 2px;
+  right: 32px;
+  padding: 5px 13px;
+  text-align: center;
+  font-size: 13px;
+  height: 15px;
+  line-height: 10px;
+  background-color: #ffe082;
+  color: #333;
+  border: 1px solid #f2d79f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submitReportBtn:hover {
+  background-color: #ffdb69;
+}
+
+.docu-result-message {
+  position: absolute;
+  top: 5px;
+  font-size: 13px;
+  color: #007700;
+  font-weight: 300;
+}
+.docu-result-message.error {
+  color: #cc0000;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  child-src 'none';
+  object-src 'none';
+  ">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="../styles/signUp.css">
+</head>
+<body>
+<div class="container">
+  <div class="header-row">
+    <h3>회원가입</h3>
+  </div>
+  <table>
+    <tr>
+      <td>상호</td>
+      <td><input id="corpName" type="text" placeholder="상호명을 입력해주세요"></td>
+      <td>사업자등록번호</td>
+      <td><input id="corpNum" type="text" placeholder="하이픈(-)은 생략"></td>
+    </tr>
+    <tr>
+      <td>홈택스ID</td>
+      <td><input type="text" placeholder="홈택스 아이디를 입력해주세요"></td>
+      <td>홈택스PW</td>
+      <td><input type="text" placeholder="홈택스 비밀번호 입력해주세요"></td>
+    </tr>
+    <tr>
+      <td>사용자이름</td>
+      <td><input type="text" placeholder="사용자 이름을 입력해주세요"></td>
+      <td>사무실</td>
+      <td><input type="text" placeholder="부서명을 입력해주세요"></td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td><input type="text" placeholder="이메일을 입력해주세요"></td>
+      <td>휴대폰</td>
+      <td><input type="text" placeholder="휴대폰 번호를 입력해주세요"></td>
+    </tr>
+    <tr>
+      <td>관리번호</td>
+      <td><input type="text"></td>
+      <td>관리PW</td>
+      <td><button>더블클릭</button></td>
+    </tr>
+    <tr>
+      <td>공인인증서등록</td>
+      <td><button>더블클릭</button></td>
+      <td>유효기간</td>
+      <td><span></span></td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <div>
+      <a href="#">신규사용자</a>
+    </div>
+    <div class="actions-right">
+      <button>새로작성</button>
+      <button>로그인체크</button>
+      <button>등록요청</button>
+      <button>로그인</button>
+      <button style="background-color: #f2c198;">ID추가</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
